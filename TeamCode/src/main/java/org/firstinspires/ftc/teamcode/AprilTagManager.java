@@ -58,6 +58,11 @@ public class AprilTagManager {
                 best = tag;
             }
         }
+
+        //if there are no AprilTags in vision, turn completely around
+        if (best == null) {
+            return 180;
+        }
         
         return best.ftcPose.bearing; //check if this rotates the correct way
     }
